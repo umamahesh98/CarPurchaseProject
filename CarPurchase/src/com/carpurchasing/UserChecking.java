@@ -10,11 +10,12 @@ public class UserChecking extends Exception {
 			char[] chars = newUser.toCharArray();
 			for (char c : chars) {
 				if (Character.isDigit(c)) {
-					throw new Exception();
+					throw new UserException("Name should not cotanin any numbers");
+					
 				}
 			}
-		} catch (Exception e) {
-			System.out.println("Name should not cotanin any numbers");
+		} catch (UserException e) {
+			System.out.println(e.getMessage());
 			UserChecking check = new UserChecking();
 			check.userChecking();
 		}
